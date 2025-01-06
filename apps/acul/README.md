@@ -5,6 +5,10 @@ ACUL screen prompts
 ## Make sure you're using at least Node v 20
 
 ```
+$ npm run build 
+```
+
+```
 src/
   components/
     prompts/            // Majority of logic + ui code
@@ -87,4 +91,8 @@ curl --location --request PATCH 'https://t2vercel.mvbuilt.com/api/v2/prompts/log
 - https://ultest.vercel.app/prompts/login-pwless-otp.js
 
 
+## Testing with manual authorize call in browser
 
+```
+https://t2vercel.mvbuilt.com/authorize?response_type=token%20id_token&client_id=yfj0AJFboBcPRCIYwjaOUzIJqwvJV1e0&redirect_uri=http://localhost:3000/api/auth/callback&scope=openid%20profile%20email%20offline_access&state=randomstateval&audience=api://t2verceldemo&nonce=test
+```
