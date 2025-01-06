@@ -1,19 +1,18 @@
-/** @format */
+import React from "react"
+import { Search } from "lucide-react"
+import { BiChevronDown } from "react-icons/bi"
 
-import { Search } from "lucide-react";
-import React from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { BiChevronDown } from "react-icons/bi";
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
 
 export default function SearchSection() {
   return (
-    <div className=" flex gap-3 w-full ">
+    <div className="flex w-full gap-3">
       <div className="relative w-full">
-        <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground " />
+        <Search className="absolute left-2 top-2.5 size-4" />
         <Input
           placeholder="Search Repositories and Projects..."
-          className="pl-8 w-full bg-inherit"
+          className="w-full bg-primary-foreground pl-8"
         />
       </div>
 
@@ -22,5 +21,5 @@ export default function SearchSection() {
         <BiChevronDown className="text-xl" />
       </Button>
     </div>
-  );
+  )
 }
