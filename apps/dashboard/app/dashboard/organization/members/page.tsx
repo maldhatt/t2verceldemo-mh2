@@ -19,12 +19,7 @@ export default async function Members() {
     })
 
   return (
-    <div className="space-y-2">
-      <PageHeader
-        title="Members"
-        description="Manage the members of the organization."
-      />
-
+    <div className="space-y-8">
       <MembersList
         members={members.map((m) => ({
           id: m.user_id,

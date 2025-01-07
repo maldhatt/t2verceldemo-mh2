@@ -41,8 +41,8 @@ export function DeleteAccountForm() {
             belong to.
           </CardDescription>
         </CardHeader>
-        <CardFooter className="flex justify-between">
-          <p className="text-sm">
+        <CardFooter className="flex items-center justify-between rounded-b-lg border-t bg-secondary py-3 dark:bg-inherit">
+          <p className="text-sm text-muted-foreground">
             <span className="font-bold">Warning:</span> This action is immediate
             and cannot be undone.
           </p>

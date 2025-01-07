@@ -76,13 +76,22 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
   }
 
   return (
-    <div className="space-y-1">
-      <div className="flex min-h-full flex-col space-y-8 lg:flex-row lg:space-x-4 lg:space-y-0">
-        <aside className="lg:w-1/5">
-          <SidebarNav items={sidebarNavItems} />
-        </aside>
-        <div className="rounded-2xl border border-border bg-field p-2 shadow-sm lg:w-4/5">
-          <div className="mx-auto max-w-6xl">{children}</div>
+    <div className="mx-auto w-full lg:space-y-8">
+      <div className="border-b py-8">
+        <h1 className="mx-auto w-full max-w-7xl text-3xl font-medium tracking-tight">
+          Settings
+        </h1>
+      </div>
+
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="flex min-h-full flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
+          <aside className="lg:w-1/5">
+            <SidebarNav items={sidebarNavItems} />
+          </aside>
+
+          <div className="lg:w-4/5">
+            <div className="mx-auto max-w-6xl">{children}</div>
+          </div>
         </div>
       </div>
     </div>

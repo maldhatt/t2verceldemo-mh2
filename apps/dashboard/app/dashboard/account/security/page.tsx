@@ -38,12 +38,7 @@ export default appClient.withPageAuthRequired(
       })
 
     return (
-      <div className="space-y-2">
-        <PageHeader
-          title="Security"
-          description="Manage your account's security settings."
-        />
-
+      <div>
         <MFAEnrollmentForm factors={filteredFactors} />
       </div>
     )

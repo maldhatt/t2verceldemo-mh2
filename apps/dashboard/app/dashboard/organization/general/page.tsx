@@ -1,5 +1,4 @@
 import { appClient, managementClient } from "@/lib/auth0"
-import { PageHeader } from "@/components/page-header"
 
 import { DisplayNameForm } from "./display-name-form"
 
@@ -10,12 +9,7 @@ export default async function GeneralSettings() {
   })
 
   return (
-    <div className="space-y-2">
-      <PageHeader
-        title="General Settings"
-        description="Update your organization's general settings."
-      />
-
+    <div className="space-y-8">
       <DisplayNameForm
         organization={{
           id: org.id,

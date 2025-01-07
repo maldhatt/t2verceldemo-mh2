@@ -22,6 +22,7 @@ import {
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -114,6 +115,7 @@ export function InvitationsList({ invitations }: Props) {
               </TableRow>
             ))}
           </TableBody>
+          <TableCaption>{invitations.length} pending invitations.</TableCaption>
         </Table>
       </CardContent>
     </Card>

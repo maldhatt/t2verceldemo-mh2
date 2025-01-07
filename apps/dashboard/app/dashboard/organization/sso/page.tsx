@@ -1,5 +1,4 @@
 import { appClient, managementClient } from "@/lib/auth0"
-import { PageHeader } from "@/components/page-header"
 
 import { ConnectionsList } from "./connections-list"
 
@@ -11,12 +10,7 @@ export default async function SSO() {
     })
 
   return (
-    <div className="space-y-2">
-      <PageHeader
-        title="Single Sign-On"
-        description="Configure SSO for your organization."
-      />
-
+    <div className="space-y-8">
       <ConnectionsList
         connections={connections
           // filter out the default connection ID assigned to all organizations

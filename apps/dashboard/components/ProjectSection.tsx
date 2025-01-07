@@ -139,7 +139,7 @@ function ProjectCard(props: ProjectCardProps) {
           </section>
 
           <section className="flex items-center gap-3">
-            <button className="flex size-8 items-center justify-center rounded-full border-2 text-xl">
+            <button className="flex size-8 items-center justify-center rounded-full border-[3px] text-xl">
               <TbActivityHeartbeat className="text-muted-foreground" />
             </button>
             <button className="flex h-7 w-6 items-center justify-center rounded-md">

@@ -1,6 +1,5 @@
 import { appClient, managementClient } from "@/lib/auth0"
 import { DEFAULT_MFA_POLICY } from "@/lib/mfa-policy"
-import { PageHeader } from "@/components/page-header"
 
 import { MfaPolicyForm } from "./mfa-policy-form"
 
@@ -11,12 +10,7 @@ export default async function SecurityPolicies() {
   })
 
   return (
-    <div className="space-y-2">
-      <PageHeader
-        title="Security Policies"
-        description="Manage the security policies of your organization."
-      />
-
+    <div className="space-y-8">
       <MfaPolicyForm
         organization={{
           id: org.id,

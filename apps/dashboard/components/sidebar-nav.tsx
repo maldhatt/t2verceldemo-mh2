@@ -2,10 +2,9 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronRightIcon, Dot } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
   items: {
@@ -20,25 +19,25 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
   return (
     <nav
       className={cn(
-        "ml-0 mt-8 flex min-h-full space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1",
+        "ml-0 mt-8 flex min-h-full space-x-2 lg:mt-0 lg:flex-col lg:space-x-0 lg:space-y-1",
         className
       )}
       {...props}
     >
       {items.map((item) => (
-        <Link
+        <Button
+          asChild
           key={item.href}
-          href={item.href}
+          variant="ghost"
           className={cn(
-            buttonVariants({ variant: "ghost" }),
-            pathname.includes(item.href) && "text-accent-foreground",
-            "hover:bg-muted",
-            "justify-between pl-2.5 pr-1"
+            "w-full justify-start hover:bg-zinc-200 hover:text-accent-foreground dark:hover:bg-zinc-700",
+            pathname.includes(item.href)
+              ? "text-primary"
+              : "text-muted-foreground"
           )}
         >
-          {item.title}
-          {pathname.includes(item.href) && <Dot className="h-6 w-6" />}
-        </Link>
+          <Link href={item.href}>{item.title}</Link>
+        </Button>
       ))}
     </nav>
   )

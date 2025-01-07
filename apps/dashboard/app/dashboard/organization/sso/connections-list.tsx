@@ -187,7 +187,7 @@ export function ConnectionsList({ connections }: Props) {
           </TableBody>
         </Table>
       </CardContent>
-      <CardFooter className="flex justify-end">
+      <CardFooter className="flex items-center justify-end rounded-b-xl border-t bg-secondary py-3 dark:bg-inherit">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button>

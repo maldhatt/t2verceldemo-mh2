@@ -108,7 +108,7 @@ export default async function DashboardLayout({
 
         {/* This handles the navigation menu (Overview, Integrations, etc.) */}
         {/* Main element here scopes page.tsx elements */}
-        <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-full bg-secondary px-2 py-6 sm:px-8">
+        <main className="mx-auto grid min-h-[calc(100svh-164px)] max-w-full bg-secondary pb-12 dark:bg-inherit">
           {children}
         </main>
 

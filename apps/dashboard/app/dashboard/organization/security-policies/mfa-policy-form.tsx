@@ -142,7 +142,7 @@ export function MfaPolicyForm({ organization }: Props) {
             </div>
           </div>
         </CardContent>
-        <CardFooter className="flex justify-end">
+        <CardFooter className="flex items-center justify-end rounded-b-lg border-t bg-secondary py-3 dark:bg-inherit">
           <SubmitButton>Save</SubmitButton>
         </CardFooter>
       </form>
