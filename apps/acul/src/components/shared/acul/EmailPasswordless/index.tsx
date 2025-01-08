@@ -10,13 +10,22 @@ export interface Props {
   placeholder?: string;
   otherOption: string;
   textSize?: string;
+  display?: boolean;
+  setDisplay?: Dispatch<SetStateAction<boolean>>;
 }
 export default function EmailPasswordless(props: Props) {
-  const { loginIdManager, placeholder, otherOption, textSize, type, setView } =
-    props;
+  const {
+    loginIdManager,
+    placeholder,
+    otherOption,
+    textSize,
+    type,
+    setView,
+    // display,
+    setDisplay,
+  } = props;
   const [username, setUsername] = useState("");
 
-  // console.log(signupIdManager);
   return (
     <div>
       <StyledInput
@@ -70,7 +79,8 @@ export default function EmailPasswordless(props: Props) {
             if (type === "signup") {
               setView!("two");
             } else if (type === "login") {
-              redirectTo({ screen: "login" });
+              // redirectTo({ screen: "login" });
+              setDisplay!(false);
             }
           }}
           className={`text-[${

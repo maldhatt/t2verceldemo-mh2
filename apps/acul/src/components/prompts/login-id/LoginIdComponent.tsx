@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import "../../../index.css";
 import { LoginId } from "@auth0/auth0-acul-js";
 import { Button } from "@/components/ui/button";
@@ -40,9 +40,14 @@ function Divider() {
   );
 }
 
-function EnterpriseLogin() {
+function EnterpriseLogin(props: {
+  display?: boolean;
+  setDisplay?: Dispatch<SetStateAction<boolean>>;
+}) {
   const [isSaml, setIsSaml] = useState(false);
   const [slug, setSlug] = useState("");
+
+  const { setDisplay } = props;
 
   return (
     <div className="mt-6 flex flex-col gap-2">
@@ -156,7 +161,8 @@ function EnterpriseLogin() {
         <a
           href="#"
           onClick={() => {
-            redirectTo({ screen: "login", connection: "email" });
+            // redirectTo({ screen: "login", connection: "email" });
+            setDisplay!(true);
           }}
           className="text-[14px] text-[#47a8ff] hover:underline hover:text-[#47a8ff]"
         >
@@ -166,23 +172,27 @@ function EnterpriseLogin() {
     </div>
   );
 }
-
-function MainLogin() {
+function MainLogin(props: {
+  display?: boolean;
+  setDisplay?: Dispatch<SetStateAction<boolean>>;
+}) {
+  const { display, setDisplay } = props;
   return (
     <>
       <SocialLogin loginIdManager={loginIdManager} view="login" />
 
       <Divider />
 
-      <EnterpriseLogin />
+      <EnterpriseLogin display={display} setDisplay={setDisplay} />
     </>
   );
 }
 
 export default function LoginIdComponent() {
-  const isEmailPasswordless =
-    loginIdManager.transaction.connectionStrategy === "email" ? true : false;
+  // const isEmailPasswordless =
+  //   loginIdManager.transaction.connectionStrategy === "email" ? true : false;
 
+  const [isEmailPasswordless, setIsEmailPasswordless] = useState(false);
   return (
     <div className="overflow-auto">
       <div className="min-h-screen h-screen flex flex-col text-white min-w-[100%] w-[100%]">
@@ -194,15 +204,21 @@ export default function LoginIdComponent() {
               <h2 className="mt-6 text-3xl font-bold mb-[1rem]">
                 Log in to Vercel
               </h2>
+
               {isEmailPasswordless ? (
                 <EmailPasswordless
                   loginIdManager={loginIdManager}
                   type="login"
                   otherOption="Other Login options"
                   placeholder="Email"
+                  display={isEmailPasswordless}
+                  setDisplay={setIsEmailPasswordless}
                 />
               ) : (
-                <MainLogin />
+                <MainLogin
+                  display={isEmailPasswordless}
+                  setDisplay={setIsEmailPasswordless}
+                />
               )}
             </div>
           </div>
