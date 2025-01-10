@@ -1,8 +1,8 @@
-import { LoginId } from "@auth0/auth0-acul-js";
+import { LoginId, SignupId } from "@auth0/auth0-acul-js";
 import StyledInput from "../../components/StyledInput";
 import { Button } from "@/components/ui/button";
 import { Dispatch, SetStateAction, useState } from "react";
-import { redirectTo } from "../../utils";
+// import { redirectTo } from "../../utils";
 export interface Props {
   type: string;
   setView?: Dispatch<SetStateAction<string>>;
@@ -12,6 +12,7 @@ export interface Props {
   textSize?: string;
   display?: boolean;
   setDisplay?: Dispatch<SetStateAction<boolean>>;
+  otherData?: { teamname: string; teamurl: string };
 }
 export default function EmailPasswordless(props: Props) {
   const {
@@ -23,9 +24,12 @@ export default function EmailPasswordless(props: Props) {
     setView,
     // display,
     setDisplay,
+    otherData,
   } = props;
   const [username, setUsername] = useState("");
 
+  const { teamname, teamurl } = otherData ? otherData : {};
+  
   return (
     <div>
       <StyledInput
@@ -44,13 +48,18 @@ export default function EmailPasswordless(props: Props) {
               username,
             });
           } else if (type === "signup") {
-            redirectTo({
-              screen: "signup",
-              screenHint: "signup",
-              connection: "email",
-              extFrom: "signup",
-              loginHint: `${username}`,
+            new SignupId().signup({
+              email: username,
+              teamname,
+              teamurl,
             });
+            // redirectTo({
+            //   screen: "signup",
+            //   screenHint: "signup",
+            //   connection: "email",
+            //   extFrom: "signup",
+            //   loginHint: `${username}`,
+            // });
           }
         }}
       >

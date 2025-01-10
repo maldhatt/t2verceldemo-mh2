@@ -5,7 +5,7 @@ export function sendToSignUp() {
   const loginIdManager = new LoginId();
   const domain = `t2vercel.mvbuilt.com`;
   redirectTo({
-    screen: "login",
+    screen: "signup",
     link: `https://${domain}${loginIdManager.screen.signupLink}`,
   });
 }

@@ -4,12 +4,12 @@ import { LoginId } from "@auth0/auth0-acul-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip";
 import Footer from "@/components/shared/components/Footer";
 import Header from "@/components/shared/components/Header";
 import SignUp from "@/components/shared/acul/SignUp";
@@ -17,13 +17,9 @@ import SignUp from "@/components/shared/acul/SignUp";
 import SocialLogin from "@/components/shared/acul/SocialLogin";
 import EmailPasswordless from "@/components/shared/acul/EmailPasswordless";
 
-import { redirectTo } from "@/components/shared/utils";
+// import { redirectTo } from "@/components/shared/utils";
 
 const loginIdManager = new LoginId();
-
-console.log(loginIdManager);
-
-// const {state} = loginIdManager.transaction;
 
 function Divider() {
   return (
@@ -54,7 +50,7 @@ function EnterpriseLogin(props: {
       {isSaml && (
         <>
           <Label htmlFor="slug" className="">
-            <div className="text-left w-full mb-[8px] text-[hsla(0,0%,63%,1)] text-[13px] flex items-center gap-[5px]">
+            {/* <div className="text-left w-full mb-[8px] text-[hsla(0,0%,63%,1)] text-[13px] flex items-center gap-[5px]">
               <span>Team Slug</span>
               <TooltipProvider>
                 <Tooltip>
@@ -81,11 +77,11 @@ function EnterpriseLogin(props: {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-            </div>
+            </div> */}
             <div className="shadow-button rounded-[8px] focus-within:shadow-input">
               <Input
                 className="h-[48px] !text-[1rem] rounded-[8px] py-[0px] px-[12px] !shadow-button focus:outline-offset-0 border-none"
-                placeholder="my-team"
+                placeholder="Work Email"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
               />
@@ -97,8 +93,13 @@ function EnterpriseLogin(props: {
       <Button
         onClick={() => {
           if (isSaml) {
-            if (slug.length > 0 && slug === "okta") {
-              redirectTo({ screen: "login", connection: "TheCrownlands" });
+            if (slug.length > 0) {
+              // loginIdManager.socialLogin({
+              //   connection: "TheCrownlands",
+              // });
+              loginIdManager.login({
+                username: slug,
+              });
             }
           } else {
             setIsSaml(true);
