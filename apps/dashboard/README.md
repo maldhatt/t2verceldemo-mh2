@@ -1,6 +1,6 @@
 # **SaaStart** from Auth0 by Okta + Vercel Dashboard
 
->> .env.local
+> > .env.local
 
 ```
 APP_BASE_URL=http://localhost:3000
@@ -24,9 +24,8 @@ AUTH0_MEMBER_ROLE_ID=rol_BWFPQUvCWtfiaR1j
 
 # The default connection ID users will use to create an account with during onboarding
 DEFAULT_CONNECTION_ID=con_NRKA7kln1vvJE74o
+EMAIL_CONNECTION_ID=con_KDJy5sYhGpv7dJxP
 
 # The namespace used to prefix custom claims
 CUSTOM_CLAIMS_NAMESPACE=https://example.com
 ```
-
-

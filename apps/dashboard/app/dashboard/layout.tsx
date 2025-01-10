@@ -28,11 +28,6 @@ export default async function DashboardLayout({
     id: session.user.sub,
   })
 
-  // if the user does not belong to any organizations, redirect to onboarding
-  if (!orgs.length) {
-    redirect("/onboarding/create")
-  }
-
   return (
     <UserProvider>
       <div>
