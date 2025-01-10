@@ -1,28 +1,27 @@
 import Footer from "@/components/shared/components/Footer";
 import Header from "@/components/shared/components/Header";
-import { Progress } from "@/components/ui/progress";
+// import { Progress } from "@/components/ui/progress";
 import { SignupPassword } from "@auth0/auth0-acul-js";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function SignupPwComponent() {
   const signupPasswordManager = new SignupPassword();
   console.log(signupPasswordManager);
   const { loginLink } = signupPasswordManager.screen;
   const { state } = signupPasswordManager.transaction;
-  const [progress, setProgress] = useState(13);
+  //   const [progress, setProgress] = useState(13);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setProgress(99), 1000;
-    });
-    var switchConnectionButton = document.getElementById("switchSignUp");
-    const timer2 = setTimeout(() => {
-      switchConnectionButton?.click(), 1000;
-    });
-
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(timer2);
-    };
+    // const timer = setTimeout(() => {
+    //   setProgress(99), 1000;
+    // });
+    // var switchConnectionButton = document.getElementById("switchSignUp");
+    // const timer2 = setTimeout(() => {
+    //   switchConnectionButton?.click(), 1000;
+    // });
+    // return () => {
+    //   clearTimeout(timer);
+    //   clearTimeout(timer2);
+    // };
   }, []);
   return (
     <>
@@ -50,7 +49,7 @@ export default function SignupPwComponent() {
                   <span>Send a secure code by email</span>{" "}
                 </button>
               </form>
-              <Progress value={progress} className="bg-[white]" />
+              {/* <Progress value={progress} className="bg-[white]" /> */}
             </main>
           </main>
         </div>
