@@ -5,8 +5,10 @@ import { SignupPassword } from "@auth0/auth0-acul-js";
 import { useEffect, useState } from "react";
 
 export default function SignupPwComponent() {
-  const { loginLink } = new SignupPassword().screen;
-  const { state } = new SignupPassword().transaction;
+  const signupPasswordManager = new SignupPassword();
+  console.log(signupPasswordManager);
+  const { loginLink } = signupPasswordManager.screen;
+  const { state } = signupPasswordManager.transaction;
   const [progress, setProgress] = useState(13);
   useEffect(() => {
     const timer = setTimeout(() => {

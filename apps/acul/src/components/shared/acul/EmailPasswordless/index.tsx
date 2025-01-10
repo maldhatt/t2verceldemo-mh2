@@ -12,6 +12,7 @@ export interface Props {
   textSize?: string;
   display?: boolean;
   setDisplay?: Dispatch<SetStateAction<boolean>>;
+  otherData?: { teamname: string; teamurl: string };
 }
 export default function EmailPasswordless(props: Props) {
   const {
@@ -23,9 +24,12 @@ export default function EmailPasswordless(props: Props) {
     setView,
     // display,
     setDisplay,
+    otherData,
   } = props;
   const [username, setUsername] = useState("");
 
+  const { teamname, teamurl } = otherData ? otherData : {};
+  
   return (
     <div>
       <StyledInput
@@ -46,6 +50,8 @@ export default function EmailPasswordless(props: Props) {
           } else if (type === "signup") {
             new SignupId().signup({
               email: username,
+              teamname,
+              teamurl,
             });
             // redirectTo({
             //   screen: "signup",

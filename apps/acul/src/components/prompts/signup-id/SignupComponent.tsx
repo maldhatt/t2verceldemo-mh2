@@ -572,6 +572,7 @@ export default function SignupComponent(props: Settings) {
                       textSize="16px"
                       setView={setView}
                       type="signup"
+                      otherData={{teamname, teamurl}}
                     />
                   </div>
                 </>
