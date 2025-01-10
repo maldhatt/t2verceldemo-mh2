@@ -17,13 +17,9 @@ import SignUp from "@/components/shared/acul/SignUp";
 import SocialLogin from "@/components/shared/acul/SocialLogin";
 import EmailPasswordless from "@/components/shared/acul/EmailPasswordless";
 
-import { redirectTo } from "@/components/shared/utils";
+// import { redirectTo } from "@/components/shared/utils";
 
 const loginIdManager = new LoginId();
-
-console.log(loginIdManager);
-
-// const {state} = loginIdManager.transaction;
 
 function Divider() {
   return (
@@ -98,7 +94,9 @@ function EnterpriseLogin(props: {
         onClick={() => {
           if (isSaml) {
             if (slug.length > 0 && slug === "okta") {
-              redirectTo({ screen: "login", connection: "TheCrownlands" });
+              loginIdManager.socialLogin({
+                connection: "TheCrownlands",
+              });
             }
           } else {
             setIsSaml(true);
