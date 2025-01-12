@@ -214,12 +214,10 @@ export function OrganizationSwitcher({
                     />
                     <Label
                       htmlFor="pro-trial"
-                      className="flex flex-col items-start justify-between space-y-1 rounded-md border border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-[#0068d6] peer-data-[state=checked]:bg-[#f0f7ff] peer-data-[state=checked]:text-[#0068d6]"
+                      className="flex flex-col items-start justify-between space-y-1 rounded-md border border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-[#0068d6] peer-data-[state=checked]:bg-[#f0f7ff] peer-data-[state=checked]:text-[#0068d6] dark:peer-data-[state=checked]:border-[#52a8ff] dark:peer-data-[state=checked]:bg-[#0f1c2e] dark:peer-data-[state=checked]:text-[#52a8ff]"
                     >
                       <p className="font-semi text-sm">Pro Trial</p>
-                      <p className="text-sm font-normal text-muted-foreground">
-                        Free for two weeks
-                      </p>
+                      <p className="text-sm font-normal">Free for two weeks</p>
                     </Label>
                   </div>
                   <div>
@@ -231,7 +229,7 @@ export function OrganizationSwitcher({
                     />
                     <Label
                       htmlFor="pro"
-                      className="flex flex-col items-start justify-between space-y-1 rounded-md border border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-[#0068d6] peer-data-[state=checked]:bg-[#f0f7ff] peer-data-[state=checked]:text-[#0068d6]"
+                      className="flex flex-col items-start justify-between space-y-1 rounded-md border border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-[#0068d6] peer-data-[state=checked]:bg-[#f0f7ff] peer-data-[state=checked]:text-[#0068d6] dark:peer-data-[state=checked]:border-[#52a8ff] dark:peer-data-[state=checked]:bg-[#0f1c2e] dark:peer-data-[state=checked]:text-[#52a8ff]"
                     >
                       <p className="font-semi text-sm">Pro</p>
                       <p className="text-sm font-normal">Get started now</p>
