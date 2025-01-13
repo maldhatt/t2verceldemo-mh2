@@ -86,7 +86,7 @@ export default function EmailPasswordless(props: Props) {
           href="#"
           onClick={() => {
             if (type === "signup") {
-              setView!("two");
+              setView!("first");
             } else if (type === "login") {
               // redirectTo({ screen: "login" });
               setDisplay!(false);

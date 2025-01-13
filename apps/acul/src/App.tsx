@@ -3,7 +3,7 @@
 // import viteLogo from "/vite.svg";
 import "./App.css";
 import LoginIdComponent from "./components/prompts/login-id/LoginIdComponent";
-import LoginPwlessComponent from "./components/prompts/login-pwless-otp/LoginPwlessComponent";
+// import LoginPwlessComponent from "./components/prompts/login-pwless-otp/LoginPwlessComponent";
 // import LoginIdComponent from "./components/prompts/login-id/LoginIdComponent";
 // import SignupComponent from "./components/prompts/signup-id/SignupComponent";
 

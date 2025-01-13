@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { LoginId } from "@auth0/auth0-acul-js";
 import { Progress } from "@/components/ui/progress";
+import { LoginId } from "@auth0/auth0-acul-js";
 import Header from "@/components/shared/components/Header";
 import Footer from "@/components/shared/components/Footer";
 import SignUp from "@/components/shared/acul/SignUp";
@@ -12,9 +12,7 @@ export default function LoginPasswordComponent() {
     const timer = setTimeout(() => {
       setProgress(99), 1000;
     });
-    var switchConnectionButton = document.getElementById(
-      "switchConnectionButton"
-    );
+    var switchConnectionButton = document.getElementById("loginBtn");
     const timer2 = setTimeout(() => {
       switchConnectionButton?.click(), 1000;
     });
@@ -47,13 +45,15 @@ export default function LoginPasswordComponent() {
                 <button
                   type="submit"
                   className="custom-button"
-                  id="switchConnectionButton"
+                  id="loginBtn"
                   data-action-button-secondary="true"
                 >
-                  <span></span>
+                  <span className="text-[white]">
+                    Send a secure code to LOGIN by email
+                  </span>
                 </button>
               </form>
-              <Progress value={progress} className="bg-[white]"/>
+              <Progress value={progress} className="bg-[white]" />
             </div>
           </div>
         </main>
