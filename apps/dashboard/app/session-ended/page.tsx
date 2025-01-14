@@ -15,9 +15,9 @@ export default function SessionEndedPage() {
     <div className="mx-auto max-w-sm">
       <Card className="w-[450px]">
         <CardHeader>
-          <CardTitle>You've been logged out</CardTitle>
+          <CardTitle>You&apos;ve been logged out</CardTitle>
           <CardDescription>
-            You've been logged out and your session has been terminated. You can
+            You&apos;ve been logged out and your session has been terminated. You can
             log back in to continue using the app.
           </CardDescription>
         </CardHeader>
