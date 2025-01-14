@@ -12,14 +12,7 @@ export default async function CreateOidcConnection() {
   )
 
   return (
-    <div className="space-y-1">
-      <div className="pb-2">
-        <AppBreadcrumb
-          title="Back to connections"
-          href="/dashboard/organization/sso"
-        />
-      </div>
-
+    <div>
       <CreateOidcConnectionForm
         domainVerificationToken={domainVerificationToken}
       />

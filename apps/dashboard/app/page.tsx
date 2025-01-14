@@ -3,6 +3,7 @@ import Link from "next/link"
 import { redirect } from "next/navigation"
 import { ChevronRightCircleIcon } from "lucide-react"
 
+import { appClient } from "@/lib/auth0"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import VercelSvg from "@/components/svg/vercel-svg"
@@ -11,6 +12,12 @@ import { CreateTeamForm } from "./create-team-form"
 import { TestimonialsCarousel } from "./testimonials-carousel"
 
 export default async function Home() {
+  const session = await appClient.getSession()
+
+  if (session) {
+    redirect("/dashboard")
+  }
+
   return (
     <div>
       <form

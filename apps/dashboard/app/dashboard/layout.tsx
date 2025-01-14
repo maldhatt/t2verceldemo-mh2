@@ -11,6 +11,7 @@ import { OrganizationSwitcher } from "@/components/organization-switcher"
 import { UserNav } from "@/components/user-nav"
 
 import VercelSvg from "../../components/svg/vercel-svg"
+import { PollAndRedirect } from "./poll-and-redirect"
 
 export default async function DashboardLayout({
   children,
@@ -31,6 +32,7 @@ export default async function DashboardLayout({
   return (
     <UserProvider>
       <div>
+        <PollAndRedirect />
         <div className="mx-auto flex max-w-full items-center justify-between px-2 pb-2 pt-4 sm:px-6">
           <div className="flex items-center space-x-2">
             {/* Vercel Logo  */}

@@ -27,5 +27,9 @@ declare namespace NodeJS {
 
     // The namespace used to prefix custom claims
     CUSTOM_CLAIMS_NAMESPACE: string
+
+    // Redis Session Store
+    UPSTASH_REDIS_REST_URL: string
+    UPSTASH_REDIS_REST_TOKEN: string
   }
 }
