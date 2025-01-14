@@ -29,7 +29,7 @@ export function PollAndRedirect() {
     if (isLoading) return
 
     if (!data) {
-      void router.push("/")
+      void router.push("/session-ended")
     }
   }, [data, router])
 
