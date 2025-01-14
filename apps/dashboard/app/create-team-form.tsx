@@ -50,7 +50,7 @@ export function CreateTeamForm() {
               {planType !== "hobby" && (
                 <div className="size-4 rounded-full bg-secondary"></div>
               )}
-              <span>I'm working on personal projects</span>
+              <span>I&apos;m working on personal projects</span>
             </div>
             <Badge variant="secondary" className="rounded-xl">
               Hobby
@@ -71,7 +71,7 @@ export function CreateTeamForm() {
               {planType !== "pro" && (
                 <div className="size-4 rounded-full bg-secondary"></div>
               )}
-              <span>I'm working on commercial projects</span>
+              <span>I&apos;m working on commercial projects</span>
             </div>
             <Badge className="rounded-xl bg-blue-500 text-white hover:bg-blue-500">
               Pro
