@@ -31,6 +31,12 @@ export const GET = onboardingClient.handleAuth({
           {
             connection_id: process.env.EMAIL_CONNECTION_ID,
           },
+          {
+            connection_id: process.env.GITHUB_CONNECTION_ID
+          },
+          {
+            connection_id: process.env.BITBUCKET_CONNECTION_ID
+          }
         ],
       })
 

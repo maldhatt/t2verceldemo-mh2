@@ -24,6 +24,8 @@ declare namespace NodeJS {
     // The default connection ID users will use to create an account with during onboarding
     DEFAULT_CONNECTION_ID: string
     EMAIL_CONNECTION_ID: string
+    GITHUB_CONNECTION_ID: string
+    BITBUCKET_CONNECTION_ID: string
 
     // The namespace used to prefix custom claims
     CUSTOM_CLAIMS_NAMESPACE: string
