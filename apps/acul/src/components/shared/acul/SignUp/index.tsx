@@ -1,12 +1,13 @@
-import { LoginId } from "@auth0/auth0-acul-js";
+// import { LoginId } from "@auth0/auth0-acul-js";
 import { redirectTo } from "../../utils";
 
 export function sendToSignUp() {
-  const loginIdManager = new LoginId();
-  const domain = `t2vercel.mvbuilt.com`;
+  // const loginIdManager = new LoginId();
+  // const domain = `t2vercel.mvbuilt.com`;
   redirectTo({
     screen: "signup",
-    link: `https://${domain}${loginIdManager.screen.signupLink}`,
+    // link: `https://${domain}${loginIdManager.screen.signupLink}`,
+    link: 'https://t2verceldashboard.vercel.app'
   });
 }
 

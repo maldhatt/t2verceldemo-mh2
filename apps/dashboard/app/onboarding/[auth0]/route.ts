@@ -55,7 +55,7 @@ export const GET = onboardingClient.handleAuth({
       ;(res as NextResponse).cookies.delete("teamName")
 
       return NextResponse.redirect(
-        `http://localhost:3000/api/auth/login?organization=${org.id}`,
+        `https://t2verceldashboard.vercel.app/api/auth/login?organization=${org.id}`,
         res
       )
     }
