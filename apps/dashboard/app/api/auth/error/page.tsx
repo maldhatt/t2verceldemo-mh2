@@ -16,13 +16,20 @@ import {
 export default function SearchBar() {
   const searchParams = useSearchParams()
   const error = searchParams.get("error")
+  
+  function orgError(error:string) {
+    if (error.includes("organization")) {
+      return "We found you signed-up without creating a team! Please return to Homepage to signup with a team"
+    }
+    else return error
+  }
 
   return (
     <div className="mx-auto max-w-sm">
       <Card className="w-[450px]">
         <CardHeader>
           <CardTitle>Unauthorized</CardTitle>
-          <CardDescription>{error}</CardDescription>
+          <CardDescription>{orgError(error)}</CardDescription>
         </CardHeader>
         <CardFooter>
           <Link href="/" className="w-full">
